@@ -24,6 +24,9 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 function validatePasswords(passwords) {
 
+  let password = /(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\!#\$%\.\*&])[A-Za-z\d\!#\$%\.\*&]{5,}/
+	return passwords.map((element, index) => !!element.match(password) && passwords.indexOf(element) === index);
+
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
